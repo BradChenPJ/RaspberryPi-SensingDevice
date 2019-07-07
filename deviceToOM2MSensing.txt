@@ -1,0 +1,67 @@
+{
+  "Things":{
+    "name": "Room315_Sensor",
+    "description": "A sensor in Room315 to monitor temperature and hunidity",
+    "properties": {
+      "board": "Raspberry pi"
+      }
+    },
+    "Locations": [
+      {
+        "name": "CSRSR",
+        "description": "CSRSR",
+        "encodingType": "application/vnd.geo+json",
+        "location": {
+          "type": "Point",
+          "coordinates": [
+            24.967765,
+            121.187035
+          ]
+        }
+      }
+    ],
+    "Datastreams": [
+        {
+          "name": "Temperature_Sensor",
+          "description": "Temperature",
+          "observationType": "http://www.opengis.net/def/observationType/OGCOM/2.0/OM_Measurement",
+          "unitOfMeasurement": {
+            "name": "degree Celsius",
+            "symbol": "degree Celsius",
+            "definition": "http://unitsofmeasure.org/ucum.html#para-30"
+          },
+          "Sensor": {
+            "name": "DHT22",
+            "description": "Monitor temperature",
+            "encodingType": "text/html",
+            "metadata": "https://www.theengineeringprojects.com/2019/02/introduction-to-dht22.html"
+          },
+          "ObservedProperty": {
+            "name": "air_temperature",
+            "description": "Temperature of air in situ.",
+            "definition": "http://mmisw.org/ont/ioos/parameter/air_temperature"
+          }
+        },
+        {
+          "name": "Humidity_Sensor",
+          "description": "Humidity",
+          "observationType": "http://www.opengis.net/def/observationType/OGCOM/2.0/OM_Measurement",
+          "unitOfMeasurement": {
+            "name": "Percentage",
+            "symbol": "%",
+            "definition": "http://unitsofmeasure.org/ucum.html#para-29"
+          },
+          "Sensor": {
+            "name": "DHT22",
+            "description": "Monitor humidity",
+            "encodingType": "text/html",
+            "metadata": "https://www.theengineeringprojects.com/2019/02/introduction-to-dht22.html"
+          },
+          "ObservedProperty": {
+            "name": "humidity",
+            "description": "Humidity of air in situ.",
+            "definition": "http://mmisw.org/ont/ioos/parameter/relative_humidity"
+          }
+        }
+    ]
+}
